@@ -1,15 +1,9 @@
 #include "array.h"
 #include <iostream>
 #include <ostream>
-//#include "string.h"
 #include <string>
 #include <cstring>
-//#include <cstdio>
-//#include "stdio.h"
-//#include "locale.h"
-//#include <algorithm>
-//#include <iterator>
-//#include <cctype>
+
 
 namespace Prog3_1 {
 
@@ -126,23 +120,11 @@ namespace Prog3_1 {
 					for (int m = 0; m < j; m++) {
 						std::swap(ar[l][m], ar[l + 1][m]); 
 					}
-					//break;
 				}
-				/*else if (ar[l][0] == ar[l + 1][0]) {
-					//int f = 0;
-					for (int m = 1; m < j; m++) {
-						if (ar[l][m] > ar[l + 1][m]) {
-							goto M;
-						}
-					}
-					M:
-						for (int m = 0; m < j; m++)
-							std::swap(ar[l][m], ar[l + 1][m]);
-
-				}*/
 			}
 		}
 	}
+			
 
 	void Array::print_by_num(int num) {
 		int n = 0;
