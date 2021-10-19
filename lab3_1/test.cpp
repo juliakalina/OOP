@@ -7,7 +7,6 @@
 TEST(CircleMethods, Parameters)
 {
 	Prog3_1::Array a1,a2;
-	//std::string str="ARRAY\n[0]:qwe\n[1]:zxc\n[2]:asd\n"; 
 	a1.add("asd", 2);
 	a1.add("qwe", 0);
 	a1.add("zxc", 1);
