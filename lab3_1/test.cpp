@@ -14,7 +14,7 @@ TEST(CircleMethods, Parameters)
 	ASSERT_EQ(2, a1.find("asd"));
 	a1.sort();
 	ASSERT_EQ("ARRAY\n[0]:asd\n[1]:qwe\n[2]:zxc\n", a1.output()); 
-	ASSERT_EQ("ARRAY\n[0]:asd\n[1]:"+ "0" + "0" + "0" +"\n[2]:"+ "0" + "0" +"0"+"\n", a1.new_array('a'));
+	ASSERT_EQ("ARRAY\n[0]:asd\n[1]:   \n[2]:   \n", a1.new_array('a')); 
 }
 
 int _tmain(int argc, char* argv[])
