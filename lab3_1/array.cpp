@@ -150,7 +150,7 @@ namespace Prog3_1 {
 					if (((ar[n][0] | 32) >= 'a' && (ar[n][0] | 32) <= 'z') && ((ar[n][0] | 32) == (symbol | 32))) {
 						nov.ar[n][m] = ar[n][m];
 					}
-					else nov.ar[n][m] = 0; 
+					else nov.ar[n][m] = char(32); 
 				}
 			}
 		}
