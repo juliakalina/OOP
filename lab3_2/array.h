@@ -4,27 +4,30 @@
 #include <iostream>
 #include <string>
 
-namespace Prog3_1 {
+namespace Prog3_2 {
 
 	class Array {
 	private:
-		static const int i=3, j=3;
+		static const int i = 3, j = 3;
 		char ar[i][j];
-		int k; //РєРѕР»-РІРѕ Р·Р°РЅСЏС‚С‹С…
+		int k; //кол-во занятых
 	public:
 		Array();
 		Array(char* word);
 		Array(int num_word, char** words);
 
+		int getK() const { return k; }
+		int getI() const { return i; }
+
 		void init_array();
-		void input(); // РІРІРѕРґ СЌРєР·РµРјРїР»СЏСЂРѕРІ РєР»Р°СЃСЃР° РёР· РІС…РѕРґРЅРѕРіРѕ РїРѕС‚РѕРєР° 
-		std::string output(); // РІС‹РІРѕРґ РІ РІС‹С…РѕРґРЅРѕР№ РїРѕС‚РѕРє
-		void add(std::string word, int d);  //РґРѕР±Р°РІР»РµРЅРёРµ СЃР»РѕРІР° Рє РјР°СЃСЃРёРІСѓ СЃР»РѕРІ
-		int find(std::string word);  //РїРѕРёСЃРє СЃР»РѕРІР° РІ РјР°СЃСЃРёРІРµ(РЅРµС‚ / РµСЃС‚СЊ), РїСЂРё СЃРѕРІРїР°РґРµРЅРёРё СѓРєР°Р·Р°С‚СЊ РїРѕР·РёС†РёСЋ РІ РјР°СЃСЃРёРІРµ СЃР»РѕРІ
-		void print_by_num(int num); //РІС‹РґРµР»РµРЅРёРµ СЃР»РѕРІР° РїРѕ РµРіРѕ РЅРѕРјРµСЂСѓ РІ РјР°СЃСЃРёРІРµ
-		std::string new_array(char symbol); //С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ РјР°СЃСЃРёРІР° СЃР»РѕРІ, РЅР°С‡РёРЅР°СЋС‰РёС…СЃСЏ РЅР° Р·Р°РґР°РЅРЅС‹Р№ СЃРёРјРІРѕР» Р±РµР· СѓС‡РµС‚Р° СЂРµРіРёСЃС‚СЂР°
-		void sort();//СѓРїРѕСЂСЏРґРѕС‡РµРЅРёРµ СЃР»РѕРІ РІ РјР°СЃСЃРёРІРµ РїРѕ Р°Р»С„Р°РІРёС‚Сѓ
-		
+		friend std::istream& operator >>(std::istream& s, Array& arr); // ввод экземпляров класса из входного потока 
+		friend std::ostream& operator <<(std::ostream& s, const Array& arr); // вывод в выходной поток
+		Array & operator+ (std::string word);  //добавление слова к массиву слов
+		int find(std::string word);  //поиск слова в массиве(нет / есть), при совпадении указать позицию в массиве слов
+		std::string get_by_num(int num); //выделение слова по его номеру в массиве
+		Array& operator^=(char symbol); //формирование массива слов, начинающихся на заданный символ без учета регистра
+		Array& operator~();//упорядочение слов в массиве по алфавиту 
+		std::string operator[](const int);
 	};
 }
 #endif
