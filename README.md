@@ -1,4 +1,4 @@
-### **MEPhI course "Object-oriented programming"**
+## **MEPhI course "Object-oriented programming"**
 
 Lab 1:
 working with a rectangular matrix
